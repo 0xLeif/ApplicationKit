@@ -4,10 +4,8 @@ ApplicationKit is a Swift-based library that provides a rich set of tools for ma
 
 ## Features
 
-- A Lifecycle Management API that provides callback functions for significant events in the application lifecycle.
-- A simplified interface to run closures only once from anywhere within the codebase.
 - A streamlined approach to handling and observing different lifecycle notifications.
-- Debugging support with file location attributes for effective lifecycle event tracking.
+- A simplified interface to run closures only once from anywhere within the codebase.
 - More to come...
 
 ## Getting Started
