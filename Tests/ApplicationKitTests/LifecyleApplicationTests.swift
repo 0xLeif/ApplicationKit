@@ -2,15 +2,14 @@ import XCTest
 @testable import ApplicationKit
 
 private class MyApplication: LifecyleApplication {
-
-    override var lifecycleNotifications: [LifecyleApplication.LifecyleNotification] {
+    override var lifecycleNotifications: [LifecyleNotification] {
         super.lifecycleNotifications + [
             // Your notitifications
         ]
     }
 
     override func didBecomeActiveNotification(notification: Notification) {
-        
+        // Your implementation
     }
 }
 
