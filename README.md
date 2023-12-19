@@ -37,7 +37,6 @@ To handle various application states, override the necessary methods in your cus
 
 ```swift
 private class MyApplication: LifecyleApplication {
-
     override var lifecycleNotifications: [LifecyleNotification] {
         super.lifecycleNotifications + [
             // Your additional lifecycle notifications
