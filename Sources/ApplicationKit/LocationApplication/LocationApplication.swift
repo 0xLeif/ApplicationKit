@@ -25,7 +25,6 @@ open class LocationApplication: LifecyleApplication, CLLocationManagerDelegate {
     open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { }
     open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) { }
     open func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) { }
-    open func locationManager(_ manager: CLLocationManager, didUpdateTo newLocation: CLLocation, from oldLocation: CLLocation) { }
     open func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) { }
     open func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) { }
     open func locationManager(_ manager: CLLocationManager, didFailRangingFor beaconConstraint: CLBeaconIdentityConstraint, error: Error) { }

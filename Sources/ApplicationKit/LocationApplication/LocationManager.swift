@@ -1,7 +1,7 @@
 import AppState
 import CoreLocation
 
-fileprivate extension Application {
+private extension Application {
     var coreLocationManager: Dependency<CLLocationManager> {
         dependency(CLLocationManager())
     }
@@ -9,7 +9,7 @@ fileprivate extension Application {
 
 /// A class that wraps around a CLLocationManager instance from AppState's Application singleton.
 open class LocationManager {
-    @AppDependency(\.coreLocationManager) private var manager: CLLocationManager
+    @AppDependency(\.coreLocationManager) public var manager: CLLocationManager
 
     /// The delegate object to receive update events.
     public var delegate: CLLocationManagerDelegate? {
