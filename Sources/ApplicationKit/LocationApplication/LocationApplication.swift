@@ -18,20 +18,25 @@ open class LocationApplication: LifecyleApplication, CLLocationManagerDelegate {
 
     // MARK: - Open CLLocationManagerDelegate Functions
 
+    #if os(iOS) || os(macOS)
     open func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) { }
     open func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) { }
     open func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) { }
-    open func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) { }
-    open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { }
-    open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) { }
     open func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) { }
     open func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) { }
     open func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) { }
     open func locationManager(_ manager: CLLocationManager, didFailRangingFor beaconConstraint: CLBeaconIdentityConstraint, error: Error) { }
     open func locationManager(_ manager: CLLocationManager, didFinishDeferredUpdatesWithError error: Error?) { }
     open func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) { }
-    open func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) { }
     open func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) { }
     open func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) { }
+    #endif
+
+    #if !os(tvOS)
     open func locationManagerShouldDisplayHeadingCalibration(_ manager: CLLocationManager) -> Bool { false }
+    #endif
+
+    open func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) { }
+    open func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) { }
+    open func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) { }
 }
